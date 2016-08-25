@@ -57,7 +57,7 @@ class HIH61XX
   uint8_t update();
 
   //  convert humidity / temperature
-  static float rawToHumidity(uint16_t raw) { return float(raw) / 16382; }
+  static float rawToHumidity(uint16_t raw) { return (float(raw) / 16382) * 100; }
   static float rawToTemperature(uint16_t raw) { return (float(raw) / 16382) * 165 - 40; }
 
   //  use a stream to control the sensor
